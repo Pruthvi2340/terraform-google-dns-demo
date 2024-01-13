@@ -5,14 +5,14 @@
 * DNS with VPC peering with the different VPC inside single organization
 * DNS with VPC peering with the different VPC outside organization
 
-3 VPC with single organization
-1 VPC with other organization
-3 compute instance with single organization
-1 compute instance with other organization
-2 VPN gateway with single organization
-4 VPN tunnel with single organization
+* 3 VPC with single organization
+* 1 VPC with other organization
+* 3 compute instance with single organization
+* 1 compute instance with other organization
+* 2 VPN gateway with single organization
+* 4 VPN tunnel with single organization
 
-Connection summary:
+# Connection summary:
 
 1. VPC-1 to VPC-2 = VPC Peering
 2. VPC-1 to VPC-3-vpn = VPN connection with VPC-1 and VPC-3 via VPN tunnel
