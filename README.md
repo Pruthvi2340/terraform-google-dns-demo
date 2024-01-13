@@ -33,3 +33,35 @@ other_org_project_id = "<project_id_other_org>"
 other_peering_vpc = "https://www.googleapis.com/compute/v1/projects/<project_id_other_org>/global/networks/dns-test"
 vpn_secret = "123"
 ```
+
+# Terraform commands info
+
+1. Basic commands
+```
+terraform init
+terraform plan
+terraform apply 
+terraform destroy
+```
+2. Auto approve commands
+```
+terraform apply -auto-approve
+terraform destroy -auto-approve
+```
+3. To Recreate the resource which is already created
+```
+terraform taint google_compute_instance.vpc-2   # taint condition applies only first time of terraform apply
+terraform apply -auto-approve                   # If applied again it will not recreate the resource
+```
+4. To untaint the terraform resource
+```
+terraform untaint google_compute_instance.vpc-2
+```
+5. Destroy single resource
+```
+terraform destroy -target=google_compute_instance.vpc-1 -auto-approve
+```
+6. Destroy multiple specific resource
+```
+terraform destroy --target=google_compute_instance.vpc-2 --target=google_compute_instance.vpc-3-vpn --target=google_compute_instance.other-org-instance -auto-approve
+```

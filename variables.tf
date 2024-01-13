@@ -31,9 +31,6 @@ variable "other_org_project_id" {
   type = string
 }
 
-variable "other_peering_vpc" {
-  type = string
-}
 
 variable "vpn_secret" {
   type = string
